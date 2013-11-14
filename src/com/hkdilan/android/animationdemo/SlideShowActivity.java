@@ -166,8 +166,25 @@ public class SlideShowActivity extends Activity {
 			startAnim(R.anim.next, 1);
 			
 		}else{//prev
+			
+			switch(imageNo){
+			case 1:
+				imageNo = 3;
+				break;
+			case 2:
+				imageNo = 4;
+				break;
+			case 3:
+				imageNo = 1;
+				break;
+			case 4:
+				imageNo = 2;
+				break;
+			}
+			
 			startAnim(R.anim.prev, 1);
 		}
+		
 	}
 	
 	private class MyGestureDetector extends SimpleOnGestureListener {
