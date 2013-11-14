@@ -164,8 +164,8 @@ public class SlideShowActivity extends Activity {
 			}
 			
 		}
-		
 		startAnimation(R.anim.slide_left);
+		
 	}
 	
 	private class MyGestureDetector extends SimpleOnGestureListener {
