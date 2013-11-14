@@ -18,18 +18,20 @@ public final class R {
         public static final int layout_anim_slide_in_bottom=0x7f040006;
         public static final int layout_random_fade=0x7f040007;
         public static final int move=0x7f040008;
-        public static final int rotate=0x7f040009;
-        public static final int sequencial=0x7f04000a;
-        public static final int slide_down=0x7f04000b;
-        public static final int slide_in_bottom=0x7f04000c;
-        public static final int slide_left=0x7f04000d;
-        public static final int slide_left_right_repeat=0x7f04000e;
-        public static final int slide_up=0x7f04000f;
-        public static final int slide_up_down_repeat=0x7f040010;
-        public static final int together=0x7f040011;
-        public static final int zoom_in=0x7f040012;
-        public static final int zoom_in_out_repeat=0x7f040013;
-        public static final int zoom_out=0x7f040014;
+        public static final int next=0x7f040009;
+        public static final int prev=0x7f04000a;
+        public static final int rotate=0x7f04000b;
+        public static final int sequencial=0x7f04000c;
+        public static final int slide_down=0x7f04000d;
+        public static final int slide_in_bottom=0x7f04000e;
+        public static final int slide_left=0x7f04000f;
+        public static final int slide_left_right_repeat=0x7f040010;
+        public static final int slide_up=0x7f040011;
+        public static final int slide_up_down_repeat=0x7f040012;
+        public static final int together=0x7f040013;
+        public static final int zoom_in=0x7f040014;
+        public static final int zoom_in_out_repeat=0x7f040015;
+        public static final int zoom_out=0x7f040016;
     }
     public static final class animator {
         public static final int card_flip_left_in=0x7f050000;

@@ -65,11 +65,15 @@ public class SlideShowActivity extends Activity {
 			}
 		}); ;
 		
-		startAnimation(R.anim.fadein_zoomin_fadeout);
+		startAnim(R.anim.fadein_zoomin_fadeout, 0);
 	}
 	
-	private void startAnimation(int animation){
-		Log.v(TAG, "startAnimation()");
+	private void startAnim(int animation, final int from){
+		Log.v(TAG, "startAnim(): from: "+from);
+		//0-normal anim, 1-gestrue anim
+		
+		//imageView.clearAnimation();
+		imageView.setAnimation(null);
 		
 		//load animation
 		final Animation anim = AnimationUtils.loadAnimation(this, animation);
@@ -82,26 +86,38 @@ public class SlideShowActivity extends Activity {
 			
 			@Override
 			public void onAnimationStart(Animation animation) {
-				Log.v(TAG, "fade in out: "+imageNo);
+				Log.d(TAG, "onAnimationStart image: "+imageNo+", duration: "+anim.getDuration());
+				
+				if(from == 1)
+					return;
+				
 				switch (imageNo) {
 				case 1:
 					iv1.setImageDrawable(getResources().getDrawable(R.drawable.ic_members));
+					iv2.setImageDrawable(getResources().getDrawable(R.drawable.ic_location));
+					iv3.setImageDrawable(getResources().getDrawable(R.drawable.ic_location));
 					iv4.setImageDrawable(getResources().getDrawable(R.drawable.ic_location));
 					break;
 					
 				case 2:
-					iv2.setImageDrawable(getResources().getDrawable(R.drawable.ic_members));
 					iv1.setImageDrawable(getResources().getDrawable(R.drawable.ic_location));
+					iv2.setImageDrawable(getResources().getDrawable(R.drawable.ic_members));
+					iv3.setImageDrawable(getResources().getDrawable(R.drawable.ic_location));
+					iv4.setImageDrawable(getResources().getDrawable(R.drawable.ic_location));
 					break;
 					
 				case 3:
-					iv3.setImageDrawable(getResources().getDrawable(R.drawable.ic_members));
+					iv1.setImageDrawable(getResources().getDrawable(R.drawable.ic_location));
 					iv2.setImageDrawable(getResources().getDrawable(R.drawable.ic_location));
+					iv3.setImageDrawable(getResources().getDrawable(R.drawable.ic_members));
+					iv4.setImageDrawable(getResources().getDrawable(R.drawable.ic_location));
 					break;
 					
 				case 4:
-					iv4.setImageDrawable(getResources().getDrawable(R.drawable.ic_members));
+					iv1.setImageDrawable(getResources().getDrawable(R.drawable.ic_location));
+					iv2.setImageDrawable(getResources().getDrawable(R.drawable.ic_location));
 					iv3.setImageDrawable(getResources().getDrawable(R.drawable.ic_location));
+					iv4.setImageDrawable(getResources().getDrawable(R.drawable.ic_members));
 					break;
 				}
 			}
@@ -113,6 +129,8 @@ public class SlideShowActivity extends Activity {
 			
 			@Override
 			public void onAnimationEnd(Animation animation) {
+				Log.d(TAG, "onAnimationEnd image: "+imageNo);
+				
 				//change image
 				switch (imageNo) {
 				case 1:
@@ -136,7 +154,7 @@ public class SlideShowActivity extends Activity {
 					break;
 				}
 				
-				startAnimation(R.anim.fadein_zoomin_fadeout);
+				startAnim(R.anim.fadein_zoomin_fadeout, 0);
 			}
 		});
 	}
@@ -144,28 +162,12 @@ public class SlideShowActivity extends Activity {
 	private void changeImage(int i) {
 		Log.v(TAG, "changeImage: "+i);
 		
-		imageView.clearAnimation();
-		
 		if(i == 0){//left swipe, next
+			startAnim(R.anim.next, 1);
 			
-			switch(imageNo){
-			case 1:
-				imageNo = 3;
-				break;
-			case 2:
-				imageNo = 4;
-				break;
-			case 3:
-				imageNo = 1;
-				break;
-			case 4:
-				imageNo = 2;
-				break;
-			}
-			
+		}else{//prev
+			startAnim(R.anim.prev, 1);
 		}
-		startAnimation(R.anim.slide_left);
-		
 	}
 	
 	private class MyGestureDetector extends SimpleOnGestureListener {
@@ -179,11 +181,11 @@ public class SlideShowActivity extends Activity {
                 
                 if(e1.getX() - e2.getX() > swipeMinDistance && Math.abs(velocityX) > swipeThresholdVelocity) {
                     Log.i(TAG, "Left Swipe");
-                    changeImage(1);
+                    changeImage(0);
                     
                 }else if (e2.getX() - e1.getX() > swipeMinDistance && Math.abs(velocityX) > swipeThresholdVelocity) {
                 	Log.i(TAG, "Right Swipe");
-                	changeImage(0);
+                	changeImage(1);
                 }
                 
             } catch (Exception e) {
