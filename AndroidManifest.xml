@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hkdilan.android.animationdemo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="16" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.hkdilan.android.animationdemo.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CrossfadingActivity" android:label="CrossFading Demo" />
+        <activity android:name=".ViewPagerActivity" android:label="ViewPager Demo" />
+        <activity android:name=".CardFlipActivity" android:label="Card Flip Demo" />
+        <activity android:name=".ZoomActivity" android:label="Zoom Demo" />
+        <activity android:name=".LayoutChangesActivity" android:label="Layout Changes Demo" />
+        <activity android:name=".AnimationActivity" android:label="Activity Animation Demo" />
+        <activity android:name=".ListItemAnimationActivity" android:label="List Item Animation Demo" />
+        <activity android:name=".HyperSpaceAnimationActivity" android:label="Hyper Space Animation Demo" />
+        <activity android:name=".AnimationViewActivity" android:label="Animation View Demo" />
+        <activity android:name=".LayoutAnimationActivity" android:label="Layout Animation Demo" />
+        <activity android:name=".SlideShowActivity" android:label="Slide Show Demo" />
+    </application>
+
+</manifest>

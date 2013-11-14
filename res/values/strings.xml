@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AnimationDemo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="bigtext">Crossfade animations (also know as dissolve) gradually fade out one UI component while simultaneously fading in another. This animation is useful for situations where you want to switch content or views in your app. Crossfades are very subtle and short but offer a fluid transition from one screen to the next. When you don\'t use them, however, transitions often feel abrupt or hurried.</string>
+    <string name="simple_viewpager">Simple ViewPager</string>
+    <string name="zoomout">Zoom-out page transformer</string>
+    <string name="depthpage">Depth page transformer</string>
+    <string name="card_back_title">Angry Red Android</string>
+    <string name="card_back_description">this is back</string>
+    <string name="toggle">Toggle</string>
+    <string name="toggle_right">Toggle Right</string>
+    <string name="toggle_left">Toggle Left</string>
+    <string name="add">Add</string>
+
+</resources>

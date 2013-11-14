@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item
+        android:id="@+id/menu_fade_in"
+        android:title="Fade In"/>
+    <item
+        android:id="@+id/menu_fade_out"
+        android:title="Fade Out"/>
+    <item
+        android:id="@+id/menu_fade_in_out"
+        android:title="Fade In Out"/>
+    <item
+        android:id="@+id/menu_blink"
+        android:title="Blink"/>
+    
+    
+    <item
+        android:id="@+id/menu_zoom_in"
+        android:title="Zoom In"/>
+    <item
+        android:id="@+id/menu_zoom_out"
+        android:title="Zoom Out"/>
+    <item
+        android:id="@+id/menu_zoom_in_out"
+        android:title="Zoom In Out"/>
+    <item
+        android:id="@+id/menu_zoom_in_out_repeat"
+        android:title="Zoom In Out Repeat"/>
+    
+    
+    <item
+        android:id="@+id/menu_rotate"
+        android:title="Rotate"/>
+    <item
+        android:id="@+id/menu_move"
+        android:title="Move"/>
+    
+    
+    <item
+        android:id="@+id/menu_slide_up"
+        android:title="Slide Up"/>
+    
+    <item
+        android:id="@+id/menu_slide_down"
+        android:title="Slide Down"/>
+    
+    <item
+        android:id="@+id/menu_slide_up_down"
+        android:title="Slide Up Down"/>
+    
+    <item
+        android:id="@+id/menu_slide_up_down_repeat"
+        android:title="Slide Up Down Repeat"/>
+    
+    <item
+        android:id="@+id/menu_slide_left_right_repeat"
+        android:title="Slide Left Right Repeat"/>
+    
+    
+    <item
+        android:id="@+id/menu_bounce"
+        android:title="Slide Bounce"/>
+    
+    <item
+        android:id="@+id/menu_sequencial"
+        android:title="Slide Sequencial"/>
+    
+    <item
+        android:id="@+id/menu_together"
+        android:title="Slide Together"/>
+
+</menu>
